@@ -20,8 +20,8 @@ namespace GangplankEBuff
           
             _buff = AddBuffHudVisual("RaiseMoraleTeamBuff", 7f, 1, BuffType.COMBAT_ENCHANCER, unit);
             _statsMod = new StatsModifier();
-            _statsMod.AttackDamage.FlatBonus = 6 + 3.5f * ownerSpell.Level;
-            _statsMod.MoveSpeed.PercentBonus = 0.04f + 0.015f * ownerSpell.Level;
+            _statsMod.AttackDamage.FlatBonus = 2.5f + 3.5f * ownerSpell.Level;
+            _statsMod.MoveSpeed.PercentBonus = 0.025f + 0.015f * ownerSpell.Level;
             unit.AddStatModifier(_statsMod);
            
         }

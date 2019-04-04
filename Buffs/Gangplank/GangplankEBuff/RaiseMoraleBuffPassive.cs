@@ -8,7 +8,7 @@ using LeagueSandbox.GameServer.GameObjects.Stats;
 
 namespace GangplankEBuff
 {
-    internal class RaiseMoraleBuff : IBuffGameScript
+    internal class RaiseMoraleBuffPassive : IBuffGameScript
     {
        
         private IStatsModifier _statsMod;
@@ -18,18 +18,19 @@ namespace GangplankEBuff
         public void OnActivate(IObjAiBase unit, ISpell ownerSpell)
         {
           
-            _buff = AddBuffHudVisual("RaiseMoraleTeamBuff", 7f, 1, BuffType.COMBAT_ENCHANCER, unit);
             _statsMod = new StatsModifier();
-            _statsMod.AttackDamage.FlatBonus = 12 + 7 * ownerSpell.Level;
-            _statsMod.MoveSpeed.PercentBonus = 0.08f + 0.03f * ownerSpell.Level;
+            _statsMod.AttackDamage.FlatBonus = 6 + 2 * ownerSpell.Level;
+            _statsMod.MoveSpeed.PercentBonus = 0.03f + 0.01f * ownerSpell.Level;
             unit.AddStatModifier(_statsMod);
+            
            
         }
 
         public void OnDeactivate(IObjAiBase unit)
         {
-            RemoveBuffHudVisual(_buff);
+        
             unit.RemoveStatModifier(_statsMod);
+            
         }
 
         public void OnUpdate(double diff)

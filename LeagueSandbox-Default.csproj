@@ -83,6 +83,7 @@
     <Compile Include="Champions\Ezreal\E.cs" />
     <Compile Include="Champions\Ezreal\R.cs" />
     <Compile Include="Champions\Ezreal\Passive.cs" />
+    <Compile Include="Champions\Gangplank\W.cs" />
     <Compile Include="Champions\Gangplank\E.cs" />
     <Compile Include="Champions\Gangplank\Q.cs" />
     <Compile Include="Champions\Garen\E.cs" />
